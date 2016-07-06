@@ -11,16 +11,14 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.WorldSettings;
+import net.minecraft.world.GameType;
 
 public class LiteModArmorsHUDRevived implements HUDRenderListener, Tickable
 {
-    //private static LiteModArmorsHUD instance;
     public static float partialTicks;
 
     public LiteModArmorsHUDRevived()
     {
-        //instance = this;
         partialTicks = 0.0F;
     }
 
@@ -33,7 +31,7 @@ public class LiteModArmorsHUDRevived implements HUDRenderListener, Tickable
     @Override
 	public String getVersion()
     {
-        return "1.0.2";
+        return "1.0.3";
     }
 
     @Override
@@ -46,7 +44,7 @@ public class LiteModArmorsHUDRevived implements HUDRenderListener, Tickable
 
         if (mc.thePlayer != null && mc.thePlayer.inventory != null)
         {
-            if (mc.theWorld.getWorldInfo().getGameType() != WorldSettings.GameType.SPECTATOR)
+            if (mc.theWorld.getWorldInfo().getGameType() != GameType.SPECTATOR)
             {
                 GlStateManager.enableRescaleNormal();
                 GlStateManager.enableBlend();
@@ -71,9 +69,7 @@ public class LiteModArmorsHUDRevived implements HUDRenderListener, Tickable
 
     @Override
 	public void onTick(Minecraft minecraft, float partialTicks, boolean inGame, boolean clock)
-    {
-        //partialTicks = partialTicks;
-    }
+    {}
 
     private void renderArmor(int var1, int var2, int var3, float var4, EntityPlayer var5)
     {
