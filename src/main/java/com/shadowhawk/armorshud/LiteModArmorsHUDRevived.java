@@ -34,7 +34,7 @@ public class LiteModArmorsHUDRevived implements HUDRenderListener, Tickable, Con
 	
 	@Expose
 	@SerializedName("hud_enabled")
-	private boolean enabled;
+	private boolean enabled = true;
     
     public LiteModArmorsHUDRevived()
     {
@@ -50,7 +50,7 @@ public class LiteModArmorsHUDRevived implements HUDRenderListener, Tickable, Con
     @Override
 	public String getVersion()
     {
-        return "1.1";
+        return "1.1.0-beta";
     }
 
     @Override
@@ -78,11 +78,11 @@ public class LiteModArmorsHUDRevived implements HUDRenderListener, Tickable, Con
     {
     	if (toggleArmors.isPressed())
         {
-            this.renderer.toggleArmors();            
+            toggleArmors();            
         }
     	if (cycleLocation.isPressed())
         {
-            this.renderer.cycleLocation();            
+            cycleLocation();            
         }
     }
     

@@ -35,9 +35,9 @@ public class ArmorsHUDRenderer {
 	{
 		Minecraft mc = Minecraft.getMinecraft();
 
-        if (mc.thePlayer != null && mc.thePlayer.inventory != null && enabled)
+        if (mc.player != null && mc.player.inventory != null && enabled)
         {
-            if (mc.theWorld.getWorldInfo().getGameType() != GameType.SPECTATOR)
+            if (mc.world.getWorldInfo().getGameType() != GameType.SPECTATOR)
         	{
                 GlStateManager.enableRescaleNormal();
                 GlStateManager.enableBlend();
@@ -48,21 +48,21 @@ public class ArmorsHUDRenderer {
                 	for (int i = 0; i < 4; ++i)
                 	{
                 		int y = screenHeight - 40 - i * 20;
-                		this.renderArmor(i, screenWidth - 20, y, mc.getRenderPartialTicks(), mc.thePlayer);
+                		this.renderArmor(i, screenWidth - 20, y, mc.getRenderPartialTicks(), mc.player);
                 	}
                 } else if (location == BOTTOM_LEFT)
                 {
                 	for (int i = 0; i < 4; ++i)
                 	{
                 		int y = screenHeight - 40 - i * 20;
-                		this.renderArmor(i, 5, y, mc.getRenderPartialTicks(), mc.thePlayer);
+                		this.renderArmor(i, 5, y, mc.getRenderPartialTicks(), mc.player);
                 	}
                 } else if (location == TOP_CENTER)
                 {
                 	for (int i = 0; i < 4; ++i)
                 	{
                 		int x = screenWidth / 2 + (((10*(3-i))-15) * 2) - 10;
-                		this.renderArmor(i, x, 5, mc.getRenderPartialTicks(), mc.thePlayer);
+                		this.renderArmor(i, x, 5, mc.getRenderPartialTicks(), mc.player);
                 	}
                 }
                 RenderHelper.disableStandardItemLighting();
@@ -75,11 +75,12 @@ public class ArmorsHUDRenderer {
 	private void renderArmor(int armorSlot, int x, int y, float passedPartialTicks, EntityPlayer player)
     {
         RenderItem itemRenderer = Minecraft.getMinecraft().getRenderItem();
-        ItemStack armorItem = player.inventory.armorInventory[armorSlot];
+        //ItemStack armorItem = player.inventory.armorInventory[armorSlot];
+        ItemStack armorItem = player.inventory.armorInventory.get(armorSlot);
 
         if (armorItem != null)
         {
-            float animationFrames = armorItem.animationsToGo - passedPartialTicks;
+            float animationFrames = armorItem.func_190921_D() - passedPartialTicks;
 
             if (animationFrames > 0.0F)
             {
