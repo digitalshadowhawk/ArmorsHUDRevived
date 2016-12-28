@@ -80,7 +80,7 @@ public class ArmorsHUDRenderer {
 
         if (armorItem != null)
         {
-            float animationFrames = armorItem.func_190921_D() - passedPartialTicks;
+            float animationFrames = armorItem.getAnimationsToGo() - passedPartialTicks;
 
             if (animationFrames > 0.0F)
             {

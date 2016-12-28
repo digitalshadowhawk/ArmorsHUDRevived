@@ -23,8 +23,8 @@ group = "com.shadowhawk" // http://maven.apache.org/guides/mini/guide-naming-con
 archivesBaseName = "ArmorsHUDRevived"
 
 minecraft {
-    version = "1.11"
-    mappings = "snapshot_20161116"
+    version = "1.11.2"
+    mappings = "snapshot_20161224"
     runDir = "run"
 }
 
@@ -32,7 +32,7 @@ litemod {
     json {
         name = "ArmorsHUDRevived"
         author = "Shadow_Hawk"
-        mcversion = "1.11"
+        mcversion = "1.11.r2"
         description = "A movable HUD for armor!\n-Can be toggled in-game via the settings here or with a keybind\n-Can be adjusted to show the HUD at the top of the screen or in one of the bottom corners\n-Keybinds are off by default, but you can easily set them from the \"commands\" setting page"
     }
 }
