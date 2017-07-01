@@ -62,8 +62,8 @@ public class ConfigArmorsHUD implements ConfigPanel{
 
 	@Override
 	public void drawPanel(ConfigPanelHost host, int mouseX, int mouseY, float partialTicks) {
-		toggleArmors.drawButton(minecraft, mouseX, mouseY);
-		location.drawButton(minecraft, mouseX, mouseY);		
+		toggleArmors.drawButton(minecraft, mouseX, mouseY, partialTicks);
+		location.drawButton(minecraft, mouseX, mouseY, partialTicks);		
 	}
 
 	@Override

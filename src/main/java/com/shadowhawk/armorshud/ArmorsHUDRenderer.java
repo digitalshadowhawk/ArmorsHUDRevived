@@ -98,7 +98,7 @@ public class ArmorsHUDRenderer {
                 GlStateManager.popMatrix();
             }
 
-            itemRenderer.renderItemOverlays(Minecraft.getMinecraft().fontRendererObj, armorItem, x, y);
+            itemRenderer.renderItemOverlays(Minecraft.getMinecraft().fontRenderer, armorItem, x, y);
         }
     }
 
