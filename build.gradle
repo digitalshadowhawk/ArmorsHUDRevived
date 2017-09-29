@@ -21,6 +21,6 @@ jar {
         'Built-By': System.properties['user.name'],
         'Created-By': System.properties['java.vm.version'] + " (" + System.properties['java.vm.vendor'] + ")",
         'Implementation-Title': project.name,
-        'Implementation-Version': project.project.mcVersion
+        'Implementation-Version': project.mcVersion
     )
 }
